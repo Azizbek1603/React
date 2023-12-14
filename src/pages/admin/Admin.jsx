@@ -17,9 +17,8 @@ const Admin = () => {
       .then(response => {
         setLoading(false)
         setProfile(response.data)
-        console.log(response.data.data.posts);
         localStorage.setItem("posts",response.data.data.posts);
-        // navigate("/admin/createpost")
+        navigate("/admin/createpost")
       })
       .catch(error =>{
         setLoading(false)

@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react'
 import GetCategory from './../../helpers/hooks/GetCategory';
 import { instance } from '../../api';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const CreatePost = () => {
-
+  const navigate = useNavigate()
   const [name, setName] = useState("")
   const [img, setImg] = useState("")
   const [desc, setDesc] = useState("")
@@ -22,13 +23,13 @@ const CreatePost = () => {
       })
       .then(response => {
         if(response.status === 201){
-          toast.success('You registered succesfully');
-          console.log(response);
+          alert('Post created succesfully');
+          window.location.reload()
         }
       })
       .catch(error => {
        console.log(error);
-       toast.error(error.response.data.message)
+       toast.error(error.response)
       })
 
   }

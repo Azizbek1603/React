@@ -347,7 +347,6 @@
 }
 .manageposts{
     width: calc(100% - 300px);
-    background-color: #0f0fb6;
     min-height: 100vh;
     display: flex;
     gap: 30px;
@@ -356,6 +355,7 @@
     justify-content: start;
     flex-direction: column;
     margin-left: 300px;
+    color: #d8d8d8;
     hr{
         width: 100%;
         border: none;
